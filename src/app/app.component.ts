@@ -7,6 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  art=[]
+  articulos =[];
+  codigo = 0;
+  descripcion = '';
+  precio = 0;
+
+  agregar() {
+    if(this.codigo || this.descripcion || this.precio){
+      alert('Todos los campos son obligatorios');
+      return;
+    }
+
+    
+  }
+
 }
 
