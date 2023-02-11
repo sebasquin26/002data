@@ -10,6 +10,18 @@
       <th>Seleccionar</th>
     </tr>
   </thead>
+
+  <tbody>
+    <tr *ngFor="let e of articulos">
+
+      <td>{{e.codigo}}</td>
+      <td>{{e.descripcion}}</td>
+      <td>{{e.precio}}</td>
+      <td><button>Borrar</button></td>
+      <td><button>Seleccionar</button></td>
+
+    </tr>
+  </tbody>
 </table>
   <br>
   <div>
@@ -23,7 +35,7 @@
       Precio: <input type ="number" [(ngModel)]="precio">
     </p>
     <p>
-      <button>Agregar</button>
+      <button (click)="agregar()">Agregar</button>
       <button>Modificar</button>
     </p>
   </div>

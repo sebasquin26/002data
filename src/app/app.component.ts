@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Articulo from './models/articulo.models';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +8,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  articulos =[];
+  articulos :Array<Articulo> = [];
   codigo = 0;
   descripcion = '';
   precio = 0;
 
   agregar() {
-    if(this.codigo || this.descripcion || this.precio){
-      alert('Todos los campos son obligatorios');
+    if(! this.codigo || !this.descripcion.length || !this.precio){
+      alert('Todos los campos son obligatorios.');
       return;
     }
 
-    
+    let articulo: Articulo = new Articulo (this.codigo,this.descripcion,this.precio);
+    this.articulos.push(articulo);
+
+    alert('El articulo se agrego de forma correcta.')
   }
 
 }
